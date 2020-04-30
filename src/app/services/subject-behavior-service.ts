@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn:'root'
 })
 export class SBService {
-  private statusSource = new BehaviorSubject<string>('git_url');
+  private statusSource = new BehaviorSubject<string>('git_urls');
   updateStatus = this.statusSource.asObservable();
  
   constructor() { }
