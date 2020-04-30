@@ -11,7 +11,7 @@ export class RepositoryResult {
   total_count: number;
   
   get repositoryUrls() {
-    return this.items.map(item => item.deployments_url);
+    return this.items.map(item => item.git_url);
   }
   
 }

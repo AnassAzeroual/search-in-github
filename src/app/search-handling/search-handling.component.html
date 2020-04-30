@@ -1,11 +1,6 @@
-<h1>class-transformer demo</h1>
 <p><i>Type to search a github repository:</i></p>
 
 <input #term (keyup)="search(term.value)"/>
-
-<div *ngIf="repositoryResult">
-	<h2>Checkout console to see transformed result. Pay attention on object types</h2>
-</div>
 
 <ul *ngIf="repositoryResult">
 	<li *ngFor="let url of repositoryResult.repositoryUrls">{{url}}</li>

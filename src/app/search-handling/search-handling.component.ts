@@ -19,9 +19,11 @@ repositoryResult: RepositoryResult;
     this.http
         .get("https://api.github.com/search/repositories?q=" + term)
         .map(response => {
-            const repositoryResult = plainToClass(RepositoryResult, response.json() as Object);
-            console.log("loaded and transformed repositories: ", repositoryResult);
-            console.log("you can use class methods: ", repositoryResult.repositoryUrls);
+            // console.log("after",response)
+            const repositoryResult = plainToClass(RepositoryResult, response as Object);
+            // console.log("loaded and transformed repositories: ", repositoryResult);
+            // console.log("you can use class methods: ",
+            //  repositoryResult.total_count);
             return repositoryResult;
         })
         .subscribe(repositoryResult => {
