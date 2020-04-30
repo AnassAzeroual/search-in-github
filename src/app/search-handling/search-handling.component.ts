@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { plainToClass } from "class-transformer";
 import { RepositoryResult } from "./../model/Model_RepositoryResult";
 import { Repository } from "../model/Model_Repository";
+import { SubjectBehaviorService } from "../services/subject-behavior-service";
 
 @Component({
   selector: "search-handling",
@@ -224,7 +225,7 @@ export class SearchHandlingComponent implements OnInit {
 
   
   
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private srvSubject:SubjectBehaviorService) {}
 
   search(term: string) {
     this.http
