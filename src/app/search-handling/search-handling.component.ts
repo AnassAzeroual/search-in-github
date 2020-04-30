@@ -10,9 +10,13 @@ import { Repository } from "../model/Model_Repository";
   styleUrls: ["./search-handling.component.css"]
 })
 export class SearchHandlingComponent implements OnInit {
+  selectedType: string = "git_url"
   repositoryResult: RepositoryResult;
 
   types = [
+    {
+      value: "git_url"
+    },
     {
       value: "id"
     },
@@ -158,9 +162,6 @@ export class SearchHandlingComponent implements OnInit {
       value: "pushed_at"
     },
     {
-      value: "git_url"
-    },
-    {
       value: "ssh_url"
     },
     {
@@ -245,4 +246,9 @@ export class SearchHandlingComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  getSelectedType(item)
+  {
+    console.log(item)
+  }
 }
