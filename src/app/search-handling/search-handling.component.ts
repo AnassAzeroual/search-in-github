@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import {plainToClass} from "class-transformer";
 import {RepositoryResult} from "./../model/Model_RepositoryResult";
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'search-handling',

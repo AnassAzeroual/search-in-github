@@ -7,9 +7,8 @@ import { AppComponent } from './app.component';
 import { SearchHandlingComponent } from './search-handling/search-handling.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
+  imports:      [ BrowserModule, FormsModule, HttpClientModule ],
   declarations: [ AppComponent, SearchHandlingComponent ],
-  bootstrap:    [ AppComponent ],
-  providers: [HttpClientModule]
+  bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
