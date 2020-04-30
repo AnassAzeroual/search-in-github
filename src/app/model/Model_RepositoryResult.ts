@@ -1,5 +1,5 @@
 import {Type} from "class-transformer";
-import {Repository} from "./Repository";
+import {Repository} from "./Model_Repository";
 
 export class RepositoryResult {
   

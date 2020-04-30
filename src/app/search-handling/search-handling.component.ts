@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {plainToClass} from "class-transformer";
-import {RepositoryResult} from "./model/RepositoryResult";
+import {RepositoryResult} from "./../model/Model_RepositoryResult";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'search-handling',
@@ -11,7 +12,7 @@ export class SearchHandlingComponent implements OnInit {
 
 repositoryResult: RepositoryResult;
 
-  constructor (private http: Http) {
+  constructor (private http: HttpClient) {
   }
 
   search(term: string) {

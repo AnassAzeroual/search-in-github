@@ -1,5 +1,5 @@
 import {Type} from "class-transformer";
-import {Owner} from "./Owner";
+import { Owner } from "./Model_Owner";
 
 export class Repository {
     id: number;
