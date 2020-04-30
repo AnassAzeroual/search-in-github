@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { plainToClass } from "class-transformer";
 import { RepositoryResult } from "./../model/Model_RepositoryResult";
 import { Repository } from "../model/Model_Repository";
-import { SubjectBehaviorService } from "../services/subject-behavior-service";
+import { SBService } from "../services/subject-behavior-service";
 
 @Component({
   selector: "search-handling",
@@ -11,7 +11,7 @@ import { SubjectBehaviorService } from "../services/subject-behavior-service";
   styleUrls: ["./search-handling.component.css"]
 })
 export class SearchHandlingComponent implements OnInit {
-  selectedType: string = "git_url"
+  selectedType: string = ""
   repositoryResult: RepositoryResult;
 
   types = [
@@ -225,7 +225,9 @@ export class SearchHandlingComponent implements OnInit {
 
   
   
-  constructor(private http: HttpClient, private srvSubject:SubjectBehaviorService) {}
+  constructor(private http: HttpClient, private srvSubject:SBService) {
+     this.srvSubject.updateStatus.subscribe(message => this.selectedType = message)
+  }
 
   search(term: string) {
     this.http
@@ -248,8 +250,5 @@ export class SearchHandlingComponent implements OnInit {
 
   ngOnInit() {}
 
-  getSelectedType(item)
-  {
-    console.log(item)
-  }
+  getSelectedType(item){ this.srvSubject.changeStatusValue(item) }
 }
