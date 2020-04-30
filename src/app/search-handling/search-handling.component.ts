@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { plainToClass } from "class-transformer";
 import { RepositoryResult } from "./../model/Model_RepositoryResult";
 import { Repository } from "../model/Model_Repository";
-import { SBService } from "../services/subject-behavior-service";
+import { SBService } from "./../services/subject-behavior-service";
 
 @Component({
   selector: "search-handling",
@@ -11,7 +11,7 @@ import { SBService } from "../services/subject-behavior-service";
   styleUrls: ["./search-handling.component.css"]
 })
 export class SearchHandlingComponent implements OnInit {
-  selectedType: string = ""
+  selectedType: Repository;
   repositoryResult: RepositoryResult;
 
   types = [
