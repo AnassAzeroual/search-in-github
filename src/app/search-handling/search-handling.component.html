@@ -1,7 +1,9 @@
 <p><i>Type to search a github repository:</i></p>
 
 <input #term (keyup)="search(term.value)"/>
-
+<select>
+  <option ngFor="let item of types"> {{item.value}} </option>
+</select>
 <ul *ngIf="repositoryResult">
 	<li *ngFor="let url of repositoryResult.repositoryUrls">{{url}}</li>
 </ul>
